@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <pose>0 0 -0.05 0 0 0</pose>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <include>
+      <uri>model://KitchenCountertop</uri>
+      <pose>-2.25 0.15 0.2 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://Refrigerator</uri>
+      <pose>-2.22 -1.35 0.02 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://Cafe table</uri>
+      <pose>-0.386840 -1.484890 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://WoodenChair</uri>
+      <pose>-0.484914 -2.25539 0 0 -0 1.62164</pose>
+    </include>
+    <include>
+      <name>chair_2</name>
+      <uri>model://WoodenChair</uri>
+      <pose>0.25 -1.525 0 0 -0 -3.1</pose>
+    </include>
+    <include>
+      <uri>model://Plastic Cup</uri>
+      <pose>-0.25 -1.25 0.785965 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://Melissa_Doug_Felt_Food_Pizza_Set</uri>
+      <pose>-0.45 -1.75 0.78039 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://Pitcher_Base</uri>
+      <pose>-0.60 -1.45 0.787671 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring</uri>
+      <pose>-0.10 -1.5 0.783665 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://Black_Decker_CM2035B_12Cup_Thermal_Coffeemaker</uri>
+      <pose>-2.55 0.10 0.768949 0 -0 2.04915</pose>
+    </include>
+    <include>
+      <uri>model://Grey Wall</uri>
+      <pose>-3.0 0.05 0 0 -0 -1.57</pose>
+    </include>
+    <include>
+      <uri>model://TrashBin</uri>
+      <pose>-2.0 1.5 0 0 -0 1.51</pose>
+    </include>
+    <include>
+      <uri>model://BedsideTable2</uri>
+      <pose>1.45 2.3 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://LampAndStand</uri>
+      <pose>0.65 2.3 0 0 -0 0</pose>
+    </include>
+  </world>
+</sdf>
